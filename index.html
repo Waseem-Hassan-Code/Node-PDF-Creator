@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your PDF</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'YourBeautifulFont', sans-serif;
+    }
+    .header {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .header h3 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: bold;
+    }
+    .line {
+      border-top: 1px solid #000;
+      margin: 10px 0;
+    }
+    .prepared-for {
+      margin-top: 10px;
+    }
+    .bold-name {
+      font-weight: bold;
+    }
+    .flight-info {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .icon {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+    .departure-date {
+      margin-right: 5px;
+    }
+    /* ------------------------------------------------------------------- */
+    .grid-container {
+  display: grid;
+  grid-gap: 10px;
+}
+
+    .cut-corner-box {
+      width: 300px;
+      height: 280px;
+      background-color: lightgrey;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      align-items: center;
+      text-align: left;
+      padding: 10px;
+    }
+
+    /* .cut-corner-box:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%, 100% 0);
+} */
+
+
+    /* --------------------------------------------------------------------- */
+    .myTable {
+        height: 220px;
+      border-collapse: collapse;
+      border: 1px solid black;
+    }
+    .myTable  td {
+      border: 1px dotted black;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    {{#each users}}
+    <h3>{{this.dateFrom}} - {{this.dateTo}} <span style="font-size: 14px;">TRIP TO</span> NEW YORK CITY</h3>
+    <div class="line"></div>
+    <div class="prepared-for">PREPARED FOR</div>
+    <div class="bold-name">COOPER/JANE MR.</div>
+    <div class="bold-name">WILSON/JENNY MR.</div>
+    <br>
+    <div class="prepared-for">RESERVATION CODE: NHG8IQ
+    </div>
+    <div class="prepared-for">AIRLINE RESERVATION CODE: NHG8IQ
+    </div>
+
+
+    <div class="line"></div>
+    <div class="flight-info">
+      <span class="icon"><i class="fas fa-plane"></i></span>
+      <span class="departure-date">DEPARTURE DATE:</span>
+      <span class="bold-name">{{this.departureDate}}</span>
+    </div>
+    <br>
+    <!-- ------------------------------------------------------------------------------ -->
+    <table style="width: 100%;"><tr>
+        <td style="width: 30%;">
+            <div style="width:100%"  class="box cut-corner-box">
+                <br><br>
+                <span>CATHY SPECIFIC</span><br>
+                <span class="bold-name">CX-784</span><br><br>
+                <span style="font-size: 14px; ">DURATION: 05HR(S) 00MIN(S)</span><br>
+                <span style="font-size: 14px;">CLASS: ECONOMY CLASS (M)</span><br><br>
+                <span style="font-size: 14px;">STATUS: C</span>
+              </div>
+        </td>
+<td>&nbsp;</td>
+        <td style="width: 68%; height: 300px;">
+           
+                <table style="width: 93%; height: 300px;" class="myTable">
+                    <tr>
+                        <td colspan="2"><div style="display: flex;"><div style="margin-right: 5px;"> <p>DPS<br>Denpasar-Bali,<br>Indonesia</p></div>
+                        <div> <p>HKG<br>Hong Kong Hong Kong</p></div></td>
+                        <td rowspan="2"> <p>Aircraft:<br>
+                            AIRBUS INDUSTRIE<br>
+                            A330-300<br><br>
+                            Distance (in miles):<br>
+                            Not Available<br>
+                            Stop(s): 0<br><br>
+                            Meals:<br>
+                            Not Available</p></td></tr>
+                       <tr> <td> <p>Departing At:<br>
+                        <span class="time" style="font-size: 1.4rem;">16:05</span><br>
+                        Terminal:<br>
+                        I</p></td>
+                        <td> <p>Arriving At:<br>
+                            <span class="time" style="font-size: 1.4rem;">19:05</span><br>
+                            Terminal:<br>
+                            I</p></td></tr>
+                </table>
+          
+        </td>
+    </tr></table>
+
+    <div style="width: 95%;margin-top: 10px;">
+        <table style="width: 100%;">
+            <tr style="background-color: #aaaaaa;">
+                <th>Passenger Name: </th>
+                <th>Seats:</th>
+                <th>Booking:</th>
+            </tr>
+            <tr><td>COOPER/JANE MR. </td><td>Check-in required </td><td>CONFIRMED
+            </td></tr>
+            <tr><td>WILSON/JENNY MR.  </td><td>Check-in required </td><td>CONFIRMED
+            </td></tr>
+        </table>
+    </div>
+     
+    <div class="line"></div>
+      <!-- ------------------------------------------------------------------------------ -->
+      <div class="flight-info">
+        <span class="icon"><i class="fas fa-plane"></i></span>
+        <span class="departure-date">DEPARTURE DATE:</span>
+        <span class="bold-name">{{this.departureDate}}</span>
+      </div>
+      <br>
+
+      <table style="width: 100%;"><tr>
+        <td style="width: 30%;">
+            <div style="width:100%"  class="box cut-corner-box">
+                <br><br>
+                <span>CATHY SPECIFIC</span><br>
+                <span class="bold-name">CX-784</span><br><br>
+                <span style="font-size: 14px; ">DURATION: 05HR(S) 00MIN(S)</span><br>
+                <span style="font-size: 14px;">CLASS: ECONOMY CLASS (M)</span><br><br>
+                <span style="font-size: 14px;">STATUS: C</span>
+              </div>
+        </td>
+<td>&nbsp;</td>
+        <td style="width: 68%; height: 300px;">
+           
+                <table style="width: 93%; height: 300px;" class="myTable">
+                    <tr>
+                        <td colspan="2"><div style="display: flex;"><div style="margin-right: 80px;"> <p>DPS<br>Denpasar-Bali,<br>Indonesia</p></div>
+                        <div> <p>HKG<br>Hong Kong Hong Kong</p></div></td>
+                        <td rowspan="2"> <p>Aircraft:<br>
+                            AIRBUS INDUSTRIE<br>
+                            A330-300<br><br>
+                            Distance (in miles):<br>
+                            Not Available<br>
+                            Stop(s): 0<br><br>
+                            Meals:<br>
+                            Not Available</p></td></tr>
+                       <tr> <td> <p>Departing At:<br>
+                        <span class="time" style="font-size: 1.4rem;">16:05</span><br>
+                        Terminal:<br>
+                        I</p></td>
+                        <td> <p>Arriving At:<br>
+                            <span class="time" style="font-size: 1.4rem;">19:05</span><br>
+                            Terminal:<br>
+                            I</p></td></tr>
+                </table>
+          
+        </td>
+    </tr></table>
+
+    <div style="width: 95%;margin-top: 10px;">
+        <table style="width: 100%;">
+            <tr style="background-color: #aaaaaa;">
+                <th>Passenger Name: </th>
+                <th>Seats:</th>
+                <th>Booking:</th>
+            </tr>
+            <tr><td>COOPER/JANE MR. </td><td>Check-in required </td><td>CONFIRMED
+            </td></tr>
+            <tr><td>WILSON/JENNY MR.  </td><td>Check-in required </td><td>CONFIRMED
+            </td></tr>
+        </table>
+    </div>
+    <div class="line"></div>
+    {{/each}}
+
+  </div>
+</body>
+</html>
+
+
+
